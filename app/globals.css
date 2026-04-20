@@ -45,77 +45,79 @@
 
 :root {
   /* Backgrounds & Text */
-
-  --background: oklch(0.9903 0.0011 197.14);
-  /* #fbfcfc */
-  --foreground: oklch(0.2978 0.0714 243.96);
-  /* #02304e - Dark Blue */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.298 0.071 243.95);
 
   /* Cards & Popovers */
-  --card: oklch(1 0 0);
-  /* Pure White for clean separation */
-  --card-foreground: oklch(0.2978 0.0714 243.96);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.2978 0.0714 243.96);
+  --card: oklch(0.9731 0 0);
+  /* Pure White */
+  --card-foreground: oklch(0.298 0.071 243.95);
+  --popover: oklch(0.9731 0 0);
+  --popover-foreground: oklch(0.298 0.071 243.95);
 
   /* Primary (Brand / Actions) */
-  --primary: oklch(0.5581 0.2072 28.97);
-  /* #d2261d - Red */
-  --primary-foreground: oklch(0.9903 0.0011 197.14);
-  /* White/Off-white text on red buttons */
+  --primary: oklch(0.6757 0.1457 32.87);
+
+  --primary-foreground: oklch(1 0 0);
+  /* Off-white text on primary buttons */
 
   /* Secondary (Subtle backgrounds) */
-  --secondary: oklch(0.95 0.02 243.96);
-  /* Very Light Blue-Gray for soft contrast */
-  --secondary-foreground: oklch(0.2978 0.0714 243.96);
+  --secondary: oklch(0.607 0.1614 268.43);
+
+  --secondary-foreground: oklch(1 0 0);
+  /* Deep forest/sage text */
 
   /* Muted & Accents */
-  --muted: oklch(0.95 0.02 243.96);
-  --muted-foreground: oklch(0.55 0.04 243.96);
-  /* Medium Blue-Gray for secondary text */
-  --accent: oklch(0.94 0.04 28.97);
-  /* Very Light Red for hover states on menus */
-  --accent-foreground: oklch(0.5581 0.2072 28.97);
-  /* Red text on hover */
+  --muted: oklch(0.892 0.086 72.57);
+
+  --muted-foreground: oklch(0.298 0.071 243.95);
+
+  --accent: oklch(0.96 0.05 90);
+
+  --accent-foreground: oklch(0.298 0.071 243.95);
+  /* Deep warm mustard text on hover */
 
   /* System states */
-  --destructive: oklch(0.5581 0.2072 28.97);
-  /* Reusing brand red for destructive actions */
-  --destructive-foreground: oklch(0.9903 0.0011 197.14);
+  --destructive: oklch(0.60 0.18 25);
+
+  --destructive-foreground: oklch(1 0 0);
 
   /* Borders & Rings */
-  --border: oklch(0.9 0.02 243.96);
-  /* Light blue-gray border */
-  --input: oklch(0.9 0.02 243.96);
-  --ring: oklch(0.5581 0.2072 28.97);
-  /* Red focus ring for inputs */
+  --border: oklch(0.92 0.01 45);
 
-  /* Charts (Adapted for a recipe site: warm & cool complementary tones) */
-  --chart-1: oklch(0.5581 0.2072 28.97);
-  /* Red */
-  --chart-2: oklch(0.2978 0.0714 243.96);
-  /* Dark Blue */
-  --chart-3: oklch(0.75 0.15 60);
-  /* Warm Yellow/Orange */
-  --chart-4: oklch(0.65 0.12 150);
-  /* Green */
-  --chart-5: oklch(0.85 0.05 200);
-  /* Light Blue */
+  --input: oklch(0.9731 0 0);
+  --ring: oklch(0.853 0.073 253.67);
+  /* Terracotta focus ring to match primary */
 
-  --radius: 0.625rem;
+  /* Charts (Adapted for a recipe site: organic, food-inspired tones) */
+  --chart-1: oklch(0.65 0.15 45);
+  /* Terracotta (Spices/Baking) */
+  --chart-2: oklch(0.65 0.12 145);
+  /* Basil Green (Herbs/Veggies) */
+  --chart-3: oklch(0.75 0.15 85);
+  /* Saffron Yellow (Butter/Citrus) */
+  --chart-4: oklch(0.45 0.12 300);
+  /* Eggplant/Plum (Rich depth) */
+  --chart-5: oklch(0.65 0.08 200);
+  /* Soft Water Blue (Liquids/Cleanliness) */
+
+  --radius: 0.75rem;
+  /* Slightly rounder corners (0.75rem) for a friendlier, softer UI */
 
   /* Sidebar */
-  --sidebar: oklch(0.9903 0.0011 197.14);
-  --sidebar-foreground: oklch(0.2978 0.0714 243.96);
-  --sidebar-primary: oklch(0.5581 0.2072 28.97);
-  --sidebar-primary-foreground: oklch(0.9903 0.0011 197.14);
-  --sidebar-accent: oklch(0.95 0.02 243.96);
-  --sidebar-accent-foreground: oklch(0.2978 0.0714 243.96);
-  --sidebar-border: oklch(0.9 0.02 243.96);
-  --sidebar-ring: oklch(0.5581 0.2072 28.97);
+  --sidebar: oklch(0.98 0.005 45);
+
+  --sidebar-foreground: oklch(0.298 0.071 243.95);
+  --sidebar-primary: oklch(0.65 0.15 45);
+  --sidebar-primary-foreground: oklch(0.98 0.01 45);
+  --sidebar-accent: oklch(0.95 0.03 145);
+  /* Sage green hover in sidebar menus */
+  --sidebar-accent-foreground: oklch(0.35 0.06 145);
+  --sidebar-border: oklch(0.92 0.01 45);
+  --sidebar-ring: oklch(0.65 0.15 45);
 }
 
-/* .dark {
+.dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -147,7 +149,7 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
-} */
+} 
 
 @theme inline {
   --color-background: var(--background);
@@ -198,6 +200,10 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
+  h1, h2, h3 {
+    @apply font-heading;
+  }
+  
 }

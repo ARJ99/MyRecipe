@@ -11,7 +11,7 @@ const fjallaOne = Fjalla_One({
 })
 
 const raleway = Raleway({
-  weight: ["300"],
+  weight: ["500"],
   variable: "--font-raleway",
   subsets: ["latin"],
 })
