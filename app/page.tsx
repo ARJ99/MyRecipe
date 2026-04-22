@@ -1,11 +1,11 @@
 import { Hero } from "@/components/common/hero";
-import { FeaturedProducts } from "@/components/landing-page/featured-products";
+import { FavoriteRecipes } from "@/components/landing-page/favorite-recipes";
 
 export default function Home() {
   return (
     <div>
       <Hero/>
-      <FeaturedProducts/>
+      <FavoriteRecipes/>
     </div>
   );
 }
