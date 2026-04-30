@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fjalla_One, Raleway, } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/common/header";
+import { Footer } from "@/components/common/footer";
 
 
 const fjallaOne = Fjalla_One({
@@ -33,7 +34,8 @@ export default function RootLayout({
       <body className={`${fjallaOne.variable} ${raleway.variable} antialiased`}>
         <Header/>
         {children}
-        </body>
+        <Footer/>
+      </body>
     </html>
   );
 }

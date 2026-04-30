@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import Image from "next/image";
 import { Clock10Icon } from "lucide-react";
 
+
 interface RecipeInterface {
     id: string;
     title: string;
@@ -16,20 +17,22 @@ interface RecipeInterface {
 export const RecipeCard = ({ recipes }: { recipes: RecipeInterface }) => {
     return (
         <Link href="/">
-            <Card className="hover:scale-102 transition-all min-h-[300px] max-w-[300px] overflow-hidden py-0 my-0">
-                <CardHeader className="py-2 px-4 ">
-                    <CardTitle>{recipes.title}</CardTitle>
+            <Card className="flex flex-col overflow-hidden hover:scale-102 transition-all min-h-[280px] max-w-md py-0 my-0 bg-card">
+                <CardHeader className="py-4 px-4 border-b ">
+                    <CardTitle className="text-center">{recipes.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2">
-                    <div className="relative w-full h-[150px]">
-                        <Image src={recipes.imagelink} alt="recipe" fill className="rounded-lg object-cover"/>
+                    <div className="flex justify-center">
+                        <div className="relative w-full h-[150px]">
+                            <Image src={recipes.imagelink} alt="recipe" fill className="rounded-lg object-cover" />
+                        </div>
                     </div>
                     <CardDescription>
                         {recipes.description}
                     </CardDescription>
                 </CardContent>
 
-                <CardFooter className="flex bg-background items-center gap-2 h-10 ">
+                <CardFooter className="flex bg-card items-center gap-2 h-12">
                     <p>Preparation Time : </p>
                     <Clock10Icon />
                     <p>{recipes.prepTime} mins</p>
