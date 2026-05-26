@@ -2,24 +2,27 @@ import Link from "next/link";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
 import Image from "next/image";
 import { Clock10Icon } from "lucide-react";
+import { InferSelectModel } from "drizzle-orm";
+import { recipes } from "@/db/schema";
+
+type Recipe = InferSelectModel<typeof recipes>;
 
 
-interface RecipeInterface {
-    id: string;
-    slug:string;
-    title: string;
-    description: string;
-    marinateTime: number;
-    cookTime: number;
-    totalTime: number;
-    servings: number;
-    ingredients: string[],
-    imageLink: string;
-    directions: {}
-}
+// interface RecipeInterface {
+//     id: number;
+//     slug:string;
+//     title: string;
+//     description: string;
+//     marinateTime: number;
+//     cookTime: number;
+//     totalTime: number;
+//     servings: number;
+//     ingredients: string[],
+//     imageLink: string;
+//     directions: {}
+// }
 
-
-export const RecipeCard = ({ recipes }: { recipes: RecipeInterface }) => {
+export const RecipeCard = ({ recipes }: { recipes: Recipe }) => {
     return (
         <Link href="/">
             <Card className="flex flex-col overflow-hidden hover:scale-102 transition-all h-[380px] max-w-md py-0 my-0 bg-card">

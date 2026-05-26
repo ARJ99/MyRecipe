@@ -17,7 +17,12 @@ export const allRecipes = [
             "Add the hot honey to the bowl and toss to coat.",
             "Add the pork chops to the grill and cook for 4-5 minutes on each side, or until the pork chops are cooked through.",
             "Serve the pork chops with the hot honey glaze.",
-        ]
+        ],
+        createdAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000), // 1 day ago
+        approvedAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000),
+        status: "approved" as const,
+        submittedBy: "john@example.com",
+        voteCount: 120,
     },
     {
         id: "2",
@@ -37,7 +42,12 @@ export const allRecipes = [
             "Remove chicken from refrigerator. Preheat an outdoor grill to medium-high heat (400 to 450 degrees F (200 to 225 degrees C)). Oil grates, place chicken on grates, and discard any excess marinade. Grill, uncovered, until grill marks form, 3 to 5 minutes. Flip chicken; grill until an instant read thermometer inserted into the thickest portion of chicken registers 160 degrees F (71 degrees C), 3 to 5 minutes.",
             "Transfer chicken to a cutting board. Brush top of chicken evenly with 1/4 cup reserved pesto. Loosely cover with foil and let stand 5 minutes.",
             "Transfer chicken to a serving platter. Serve remaining 1/4 cup pesto on the side and garnish with basil. ",
-        ]
+        ],
+        createdAt: new Date("2024-01-18"),
+        approvedAt: new Date("2024-01-19"),
+        status: "approved" as const,
+        submittedBy: "mike@example.com",
+        voteCount: 87,
     },
     {
         id: "3",
@@ -56,7 +66,12 @@ export const allRecipes = [
             "Remove steak from marinade, and allow excess to drip off; discard marinade. Place steak directly on grill grates over High heat. Sear with lid closed, 2 to 3 minutes per side. Rotate steak 45 degrees halfway through cooking on each side for crosshatch grill marks.",
             "Move steak to indirect heat and cook to your preferred doneness, 1 to 2 minutes per side for a rare strip steak or 2 to 3 minutes per side for medium rare. Remove to a platter and keep warm.",
             "Quarter mozzarella pearls and cherry tomatoes, and slice basil leaves into very thin strips. Place topping on steak and drizzle with balsamic glaze to serve.",
-        ]
+        ],
+        createdAt: new Date("2024-01-20"),
+        approvedAt: new Date("2024-01-21"),
+        status: "approved" as const,
+        submittedBy: "alex@example.com",
+        voteCount: 56,
     },
     {
         id: "4",
@@ -74,6 +89,11 @@ export const allRecipes = [
             "Preheat an outdoor grill to medium heat. Lightly oil the grate.",
             "Remove chicken thighs from marinade; discard remaining marinade.",
             "Grill chicken thighs on the preheated grill until no longer pink in the center and the juices run clear, about 15 minutes per side. An instant-read thermometer inserted into the center should read at least 165 degrees F(74 degrees C).",
-        ]
+        ],
+        createdAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000), // 2 days ago
+        approvedAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
+        status: "approved" as const,
+        submittedBy: "proofy@example.com",
+        voteCount: 53,
     },
 ]

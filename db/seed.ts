@@ -26,6 +26,11 @@ async function main() {
             ingredients: recipe.ingredients,
             imageLink: recipe.imageLink,
             directions: recipe.directions,
+            voteCount: recipe.voteCount || 0,
+            createdAt: recipe.createdAt,
+            approvedAt: recipe.approvedAt,
+            status: recipe.status,
+            submittedBy: recipe.submittedBy,
         });
 
         console.log(

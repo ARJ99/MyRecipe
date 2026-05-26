@@ -25,8 +25,11 @@ export const recipes = pgTable(
         totalTime: integer("totalTime"),
         servings: integer("servings"),
         ingredients: json("ingredients").$type<string[]>(),
-        imageLink: text("image_link"),
+        imageLink: text("image_link").notNull(),
         directions:json("directions").$type<string[]>(),
+
+        // Voting
+        voteCount: integer("vote_count").notNull().default(0),
         
 
         // Metadata

@@ -1,107 +1,111 @@
 import { StarIcon } from "lucide-react"
-import Image from "next/image";
 import { RecipeCard } from "../common/recipe-card";
+import { getRecipes } from "@/lib/recipes/recipes-select";
 
-const lunchRecipes = [
-    {
-        id: "1",
-        slug: "hot-honey-glazed-pork-chops",
-        title: "Hot Honey Glazed Pork Chops",
-        description: "These hot honey glazed pork chops are so simple, perfectly seasoned grilled pork chops with a little bit of sweet, a little bit of heat, and a whole lot of flavor.",
-        marinateTime: 20,
-        cookTime: 15,
-        totalTime: 35,
-        servings: 4,
-        ingredients: ["1 tablespoon olive oil", "1 tablespoon ground mustard", "1/2 teaspoon salt", "1/8 teaspoon black pepper", "1 - 1/4 pounds center cut pork chops", "1/4 cup hot honey"],
-        imageLink: "https://www.allrecipes.com/thmb/lSmwnd4cxlsILAYw_3eoUzeNmpc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/11835056_Hot-Honey-Glazed-Pork-Chops_Nicole-Russell_4x3-71b860737c4a478a8b9af7454812d2ed.jpg",
-        directions: [
-            "Preheat a grill to medium-high heat.",
-            "In a small bowl, whisk together the olive oil, ground mustard, salt, and black pepper.",
-            "Add the pork chops to the bowl and toss to coat.",
-            "Add the hot honey to the bowl and toss to coat.",
-            "Add the pork chops to the grill and cook for 4-5 minutes on each side, or until the pork chops are cooked through.",
-            "Serve the pork chops with the hot honey glaze.",
-        ]
-    },
-    {
-        id: "0",
-        slug: "hot-honey-glazed-pork-chops",
-        title: "Hot Honey Glazed Pork Chops",
-        description: "These hot honey glazed pork chops are so simple, perfectly seasoned grilled pork chops with a little bit of sweet, a little bit of heat, and a whole lot of flavor.",
-        marinateTime: 20,
-        cookTime: 15,
-        totalTime: 35,
-        servings: 4,
-        ingredients: ["1 tablespoon olive oil", "1 tablespoon ground mustard", "1/2 teaspoon salt", "1/8 teaspoon black pepper", "1 - 1/4 pounds center cut pork chops", "1/4 cup hot honey"],
-        imageLink: "https://www.allrecipes.com/thmb/lSmwnd4cxlsILAYw_3eoUzeNmpc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/11835056_Hot-Honey-Glazed-Pork-Chops_Nicole-Russell_4x3-71b860737c4a478a8b9af7454812d2ed.jpg",
-        directions: [
-            "Preheat a grill to medium-high heat.",
-            "In a small bowl, whisk together the olive oil, ground mustard, salt, and black pepper.",
-            "Add the pork chops to the bowl and toss to coat.",
-            "Add the hot honey to the bowl and toss to coat.",
-            "Add the pork chops to the grill and cook for 4-5 minutes on each side, or until the pork chops are cooked through.",
-            "Serve the pork chops with the hot honey glaze.",
-        ]
-    },
-    {
-        id: "2",
-        slug: "garlicky-grilled-pesto-chicken",
-        title: "Garlicky Grilled Pesto Chicken",
-        description: "This garlicky grilled pesto chicken uses fresh homemade pesto 3 ways: as a marinade, as a sauce brushed over the finished chicken, and as a dipping sauce. This juicy, bright chicken feels summery and fresh.",
-        marinateTime: 20,
-        cookTime: 20,
-        totalTime: 40,
-        servings: 4,
-        ingredients: ["2 cups firmly packed fresh basil leaves, plus chopped basil for garnish", "1/4 cup walnut halves and pieces", "2 garlic cloves", "1 ice cube", "1 - 1/2 teaspoons kosher salt, divided", "1/2 teaspoon lemon zest", "2 tablespoons fresh lemon juice, divided", "2/3 cup extra-virgin olive oil", "3/4 ounce Parmesan cheese, grated", "4 (8-ounce) skinless, boneless chicken breasts, pounded to 1-inch thickness", "1/2 teaspoon freshly ground black pepper"],
-        imageLink: "https://www.allrecipes.com/thmb/1kHNP89yrlmjuHltMjE0aqkLU6c=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/ar-lol-lets-get-together-pool-party-garlicky-grilled-pesto-chicken-ddmfs-3x2-16553-cc188f62ec44464980f34c67547bff8c.jpg",
-        directions: [
-            "Combine basil, walnuts, garlic, ice cube, 1/2 teaspoon salt, lemon zest, and 1 tablespoon lemon juice in a food processor. Process until very finely chopped, about 30 seconds, stopping to scrape down sides as needed. With processor running, slowly stream in oil until emulsified, about 15 seconds. Add Parmesan cheese and pulse until well combined, 3 to 4 pulses.",
-            "Transfer 1/2 cup of the pesto into a large resealable plastic bag; add remaining 1 tablespoon lemon juice. Divide remaining 1/2 cup pesto into 2 small bowls, 1/4 cup each; cover and refrigerate until ready to use.",
-            "Season chicken evenly with pepper and remaining 1 teaspoon salt. Add chicken to the bag with pesto; seal, and gently massage to coat. Refrigerate for at least 30 minutes or up to 4 hours.",
-            "Remove chicken from refrigerator. Preheat an outdoor grill to medium-high heat (400 to 450 degrees F (200 to 225 degrees C)). Oil grates, place chicken on grates, and discard any excess marinade. Grill, uncovered, until grill marks form, 3 to 5 minutes. Flip chicken; grill until an instant read thermometer inserted into the thickest portion of chicken registers 160 degrees F (71 degrees C), 3 to 5 minutes.",
-            "Transfer chicken to a cutting board. Brush top of chicken evenly with 1/4 cup reserved pesto. Loosely cover with foil and let stand 5 minutes.",
-            "Transfer chicken to a serving platter. Serve remaining 1/4 cup pesto on the side and garnish with basil. ",
-        ]
-    },
-    {
-        id: "3",
-        slug: "balsamic-caprese-grilled-steak",
-        title: "Balsamic Caprese Grilled Steak",
-        description: "This balsamic Caprese grilled steak is a perfectly-grilled, simply marinated steak, topped with a mini Caprese salad and a drizzle of balsamic glaze.",
-        marinateTime: 30,
-        cookTime: 15,
-        totalTime: 45,
-        servings: 1,
-        ingredients: ["2 tablespoons olive oil", "1 tablespoon balsamic vinegar", "1/2 teaspoon herbs", "1/8 teaspoon garlic", "8 ounce strip steak", "3 mozzarella pearls", "3 cherry tomatoes", "3 fresh basil leaves", "1 teaspoon balsamic glaze, or to taste"],
-        imageLink: "https://www.allrecipes.com/thmb/nsyyz44FaRls0lRCkITNATQaN5I=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/11804623_Balsamic-Caprese-Grilled-Steak_TheDailyGourmet_4x3-60141b713f6c49a8a483c7ab3898d70e.jpg",
-        directions: [
-            "Add olive oil, balsamic vinegar, herbs, and garlic to a resealable plastic bag. Pat the strip steak dry and add steak into the marinade. Reseal the bag; marinate in the refrigerator for at least 30 minutes or up to overnight.",
-            "Brush grill grates with oil or grill spray. Preheat a gas grill with burners on High and lid closed for 10 to 15 minutes",
-            "Remove steak from marinade, and allow excess to drip off; discard marinade. Place steak directly on grill grates over High heat. Sear with lid closed, 2 to 3 minutes per side. Rotate steak 45 degrees halfway through cooking on each side for crosshatch grill marks.",
-            "Move steak to indirect heat and cook to your preferred doneness, 1 to 2 minutes per side for a rare strip steak or 2 to 3 minutes per side for medium rare. Remove to a platter and keep warm.",
-            "Quarter mozzarella pearls and cherry tomatoes, and slice basil leaves into very thin strips. Place topping on steak and drizzle with balsamic glaze to serve.",
-        ]
-    },
-    {
-        id: "4",
-        slug: "shoyu-chicken",
-        title: "Shoyu Chicken",
-        description: "Shoyu chicken is a popular Hawaiian dish often served with rice. The word shoyu is Japanese for soy sauce. Let the chicken soak in the marinade for at least an hour; the longer the better.",
-        marinateTime: 10,
-        cookTime: 30,
-        totalTime: 40,
-        servings: 1,
-        ingredients: ["1 cup soy sauce", "1 cup brown sugar", "1 cup water", "1 onion, chopped", "4 cloves garlic, minced", "1 tablespoon grated fresh ginger root", "1 tablespoon ground black pepper", "1 tablespoon dried oregano", "1 teaspoon crushed red pepper flakes", "1 teaspoon ground cayenne pepper", "1 teaspoon ground paprika", "5 pounds skinless chicken thighs"],
-        imageLink: "https://www.allrecipes.com/thmb/qXYfwVcUfAyKXEO1dni8fIeRfCQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/202463_Shoyu-Chicken-4x3-c696529b53004830bb47d51acd1aa913.jpg",
-        directions: [
-            "Whisk soy sauce, brown sugar, water, onion, garlic, ginger, black pepper, oregano, red pepper flakes, cayenne pepper, and paprika together in a large glass or ceramic bowl. Add chicken thighs and toss to coat evenly. Cover the bowl with plastic wrap; marinate chicken in the refrigerator for at least 1 hour.",
-            "Preheat an outdoor grill to medium heat. Lightly oil the grate.",
-            "Remove chicken thighs from marinade; discard remaining marinade.",
-            "Grill chicken thighs on the preheated grill until no longer pink in the center and the juices run clear, about 15 minutes per side. An instant-read thermometer inserted into the center should read at least 165 degrees F(74 degrees C).",
-        ]
-    },
-];
-export const FavoriteRecipes = () => {
+// const lunchRecipes = [
+//     {
+//         id: "1",
+//         slug: "hot-honey-glazed-pork-chops",
+//         title: "Hot Honey Glazed Pork Chops",
+//         description: "These hot honey glazed pork chops are so simple, perfectly seasoned grilled pork chops with a little bit of sweet, a little bit of heat, and a whole lot of flavor.",
+//         marinateTime: 20,
+//         cookTime: 15,
+//         totalTime: 35,
+//         servings: 4,
+//         ingredients: ["1 tablespoon olive oil", "1 tablespoon ground mustard", "1/2 teaspoon salt", "1/8 teaspoon black pepper", "1 - 1/4 pounds center cut pork chops", "1/4 cup hot honey"],
+//         imageLink: "https://www.allrecipes.com/thmb/lSmwnd4cxlsILAYw_3eoUzeNmpc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/11835056_Hot-Honey-Glazed-Pork-Chops_Nicole-Russell_4x3-71b860737c4a478a8b9af7454812d2ed.jpg",
+//         directions: [
+//             "Preheat a grill to medium-high heat.",
+//             "In a small bowl, whisk together the olive oil, ground mustard, salt, and black pepper.",
+//             "Add the pork chops to the bowl and toss to coat.",
+//             "Add the hot honey to the bowl and toss to coat.",
+//             "Add the pork chops to the grill and cook for 4-5 minutes on each side, or until the pork chops are cooked through.",
+//             "Serve the pork chops with the hot honey glaze.",
+//         ]
+//     },
+//     {
+//         id: "0",
+//         slug: "hot-honey-glazed-pork-chops",
+//         title: "Hot Honey Glazed Pork Chops",
+//         description: "These hot honey glazed pork chops are so simple, perfectly seasoned grilled pork chops with a little bit of sweet, a little bit of heat, and a whole lot of flavor.",
+//         marinateTime: 20,
+//         cookTime: 15,
+//         totalTime: 35,
+//         servings: 4,
+//         ingredients: ["1 tablespoon olive oil", "1 tablespoon ground mustard", "1/2 teaspoon salt", "1/8 teaspoon black pepper", "1 - 1/4 pounds center cut pork chops", "1/4 cup hot honey"],
+//         imageLink: "https://www.allrecipes.com/thmb/lSmwnd4cxlsILAYw_3eoUzeNmpc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/11835056_Hot-Honey-Glazed-Pork-Chops_Nicole-Russell_4x3-71b860737c4a478a8b9af7454812d2ed.jpg",
+//         directions: [
+//             "Preheat a grill to medium-high heat.",
+//             "In a small bowl, whisk together the olive oil, ground mustard, salt, and black pepper.",
+//             "Add the pork chops to the bowl and toss to coat.",
+//             "Add the hot honey to the bowl and toss to coat.",
+//             "Add the pork chops to the grill and cook for 4-5 minutes on each side, or until the pork chops are cooked through.",
+//             "Serve the pork chops with the hot honey glaze.",
+//         ]
+//     },
+//     {
+//         id: "2",
+//         slug: "garlicky-grilled-pesto-chicken",
+//         title: "Garlicky Grilled Pesto Chicken",
+//         description: "This garlicky grilled pesto chicken uses fresh homemade pesto 3 ways: as a marinade, as a sauce brushed over the finished chicken, and as a dipping sauce. This juicy, bright chicken feels summery and fresh.",
+//         marinateTime: 20,
+//         cookTime: 20,
+//         totalTime: 40,
+//         servings: 4,
+//         ingredients: ["2 cups firmly packed fresh basil leaves, plus chopped basil for garnish", "1/4 cup walnut halves and pieces", "2 garlic cloves", "1 ice cube", "1 - 1/2 teaspoons kosher salt, divided", "1/2 teaspoon lemon zest", "2 tablespoons fresh lemon juice, divided", "2/3 cup extra-virgin olive oil", "3/4 ounce Parmesan cheese, grated", "4 (8-ounce) skinless, boneless chicken breasts, pounded to 1-inch thickness", "1/2 teaspoon freshly ground black pepper"],
+//         imageLink: "https://www.allrecipes.com/thmb/1kHNP89yrlmjuHltMjE0aqkLU6c=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/ar-lol-lets-get-together-pool-party-garlicky-grilled-pesto-chicken-ddmfs-3x2-16553-cc188f62ec44464980f34c67547bff8c.jpg",
+//         directions: [
+//             "Combine basil, walnuts, garlic, ice cube, 1/2 teaspoon salt, lemon zest, and 1 tablespoon lemon juice in a food processor. Process until very finely chopped, about 30 seconds, stopping to scrape down sides as needed. With processor running, slowly stream in oil until emulsified, about 15 seconds. Add Parmesan cheese and pulse until well combined, 3 to 4 pulses.",
+//             "Transfer 1/2 cup of the pesto into a large resealable plastic bag; add remaining 1 tablespoon lemon juice. Divide remaining 1/2 cup pesto into 2 small bowls, 1/4 cup each; cover and refrigerate until ready to use.",
+//             "Season chicken evenly with pepper and remaining 1 teaspoon salt. Add chicken to the bag with pesto; seal, and gently massage to coat. Refrigerate for at least 30 minutes or up to 4 hours.",
+//             "Remove chicken from refrigerator. Preheat an outdoor grill to medium-high heat (400 to 450 degrees F (200 to 225 degrees C)). Oil grates, place chicken on grates, and discard any excess marinade. Grill, uncovered, until grill marks form, 3 to 5 minutes. Flip chicken; grill until an instant read thermometer inserted into the thickest portion of chicken registers 160 degrees F (71 degrees C), 3 to 5 minutes.",
+//             "Transfer chicken to a cutting board. Brush top of chicken evenly with 1/4 cup reserved pesto. Loosely cover with foil and let stand 5 minutes.",
+//             "Transfer chicken to a serving platter. Serve remaining 1/4 cup pesto on the side and garnish with basil. ",
+//         ]
+//     },
+//     {
+//         id: "3",
+//         slug: "balsamic-caprese-grilled-steak",
+//         title: "Balsamic Caprese Grilled Steak",
+//         description: "This balsamic Caprese grilled steak is a perfectly-grilled, simply marinated steak, topped with a mini Caprese salad and a drizzle of balsamic glaze.",
+//         marinateTime: 30,
+//         cookTime: 15,
+//         totalTime: 45,
+//         servings: 1,
+//         ingredients: ["2 tablespoons olive oil", "1 tablespoon balsamic vinegar", "1/2 teaspoon herbs", "1/8 teaspoon garlic", "8 ounce strip steak", "3 mozzarella pearls", "3 cherry tomatoes", "3 fresh basil leaves", "1 teaspoon balsamic glaze, or to taste"],
+//         imageLink: "https://www.allrecipes.com/thmb/nsyyz44FaRls0lRCkITNATQaN5I=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/11804623_Balsamic-Caprese-Grilled-Steak_TheDailyGourmet_4x3-60141b713f6c49a8a483c7ab3898d70e.jpg",
+//         directions: [
+//             "Add olive oil, balsamic vinegar, herbs, and garlic to a resealable plastic bag. Pat the strip steak dry and add steak into the marinade. Reseal the bag; marinate in the refrigerator for at least 30 minutes or up to overnight.",
+//             "Brush grill grates with oil or grill spray. Preheat a gas grill with burners on High and lid closed for 10 to 15 minutes",
+//             "Remove steak from marinade, and allow excess to drip off; discard marinade. Place steak directly on grill grates over High heat. Sear with lid closed, 2 to 3 minutes per side. Rotate steak 45 degrees halfway through cooking on each side for crosshatch grill marks.",
+//             "Move steak to indirect heat and cook to your preferred doneness, 1 to 2 minutes per side for a rare strip steak or 2 to 3 minutes per side for medium rare. Remove to a platter and keep warm.",
+//             "Quarter mozzarella pearls and cherry tomatoes, and slice basil leaves into very thin strips. Place topping on steak and drizzle with balsamic glaze to serve.",
+//         ]
+//     },
+//     {
+//         id: "4",
+//         slug: "shoyu-chicken",
+//         title: "Shoyu Chicken",
+//         description: "Shoyu chicken is a popular Hawaiian dish often served with rice. The word shoyu is Japanese for soy sauce. Let the chicken soak in the marinade for at least an hour; the longer the better.",
+//         marinateTime: 10,
+//         cookTime: 30,
+//         totalTime: 40,
+//         servings: 1,
+//         ingredients: ["1 cup soy sauce", "1 cup brown sugar", "1 cup water", "1 onion, chopped", "4 cloves garlic, minced", "1 tablespoon grated fresh ginger root", "1 tablespoon ground black pepper", "1 tablespoon dried oregano", "1 teaspoon crushed red pepper flakes", "1 teaspoon ground cayenne pepper", "1 teaspoon ground paprika", "5 pounds skinless chicken thighs"],
+//         imageLink: "https://www.allrecipes.com/thmb/qXYfwVcUfAyKXEO1dni8fIeRfCQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/202463_Shoyu-Chicken-4x3-c696529b53004830bb47d51acd1aa913.jpg",
+//         directions: [
+//             "Whisk soy sauce, brown sugar, water, onion, garlic, ginger, black pepper, oregano, red pepper flakes, cayenne pepper, and paprika together in a large glass or ceramic bowl. Add chicken thighs and toss to coat evenly. Cover the bowl with plastic wrap; marinate chicken in the refrigerator for at least 1 hour.",
+//             "Preheat an outdoor grill to medium heat. Lightly oil the grate.",
+//             "Remove chicken thighs from marinade; discard remaining marinade.",
+//             "Grill chicken thighs on the preheated grill until no longer pink in the center and the juices run clear, about 15 minutes per side. An instant-read thermometer inserted into the center should read at least 165 degrees F(74 degrees C).",
+//         ]
+//     },
+// ];
+
+
+export const FavoriteRecipes = async () => {
+
+    const allRecipes = await getRecipes();
     return (
         <section className="bg-secondary/10 py-4">
             <div className="container mx-auto px-2">
@@ -114,7 +118,7 @@ export const FavoriteRecipes = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center">
-                    {lunchRecipes.map((recipe) => (
+                    {allRecipes.map((recipe) => (
                         <RecipeCard key={recipe.id} recipes={recipe} />
                     ))}
                 </div>
