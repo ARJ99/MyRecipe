@@ -1,8 +1,4 @@
-import { StarIcon } from "lucide-react"
-import Image from "next/image";
-import { RecipeCard } from "../common/recipe-card";
-
-const lunchRecipes = [
+export const allRecipes = [
     {
         id: "1",
         slug: "hot-honey-glazed-pork-chops",
@@ -80,25 +76,4 @@ const lunchRecipes = [
             "Grill chicken thighs on the preheated grill until no longer pink in the center and the juices run clear, about 15 minutes per side. An instant-read thermometer inserted into the center should read at least 165 degrees F(74 degrees C).",
         ]
     },
-];
-export const FavoriteRecipes = () => {
-    return (
-        <section className="bg-secondary/10 py-4">
-            <div className="container mx-auto px-2">
-                <div className="flex flex-col gap-2 mb-4">
-                    <div className="flex items-center gap-1">
-                        <StarIcon className="size-4" />
-                        <h1 className="tracking-wide font-bold text-base">Favorites Recipes</h1>
-                    </div>
-                    <p className="text-sm">These are the most popular recipes</p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center">
-                    {lunchRecipes.map((recipe) => (
-                        <RecipeCard key={recipe.id} recipes={recipe} />
-                    ))}
-                </div>
-            </div>
-        </section>
-    )
-}
+]

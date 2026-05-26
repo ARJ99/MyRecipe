@@ -6,11 +6,16 @@ import { Clock10Icon } from "lucide-react";
 
 interface RecipeInterface {
     id: string;
+    slug:string;
     title: string;
     description: string;
-    prepTime: number;
-    imagelink: string;
-    recipe: string;
+    marinateTime: number;
+    cookTime: number;
+    totalTime: number;
+    servings: number;
+    ingredients: string[],
+    imageLink: string;
+    directions: {}
 }
 
 
@@ -24,7 +29,7 @@ export const RecipeCard = ({ recipes }: { recipes: RecipeInterface }) => {
                 <CardContent className="space-y-2">
                     <div className="flex justify-center">
                         <div className="relative w-full h-[150px]">
-                            <Image src={recipes.imagelink} alt="recipe" fill className="rounded-lg object-cover" />
+                            <Image src={recipes.imageLink} alt="recipe" fill sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 448px" className="rounded-lg object-cover" />
                         </div>
                     </div>
                     <CardDescription>
@@ -35,7 +40,7 @@ export const RecipeCard = ({ recipes }: { recipes: RecipeInterface }) => {
                 <CardFooter className="flex bg-card items-center gap-2 h-12">
                     <p>Preparation Time : </p>
                     <Clock10Icon />
-                    <p>{recipes.prepTime} mins</p>
+                    <p>{recipes.totalTime} mins</p>
                 </CardFooter>
             </Card>
         </Link>
