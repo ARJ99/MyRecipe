@@ -1,4 +1,4 @@
-import { BookOpenCheckIcon, BookSearch, ChefHatIcon, CookingPotIcon, HouseHeartIcon } from "lucide-react"
+import { BookOpenCheckIcon, ChefHatIcon,  HouseHeartIcon } from "lucide-react"
 import Link from "next/link"
 import { Button } from "../ui/button"
 
@@ -21,8 +21,8 @@ export const Header = () => {
                     </Link>
                 </div>
                 <div>
-                    <Button className="p-2" size="xs">Sign in</Button>
-                    <Button className="p-2 bg-secondary" size="xs">Sign up</Button>
+                    <Button className="p-2 hover:scale-102 transition-all" size="xs">Sign in</Button>
+                    <Button className="p-2 bg-secondary hover:bg-secondary/80 hover:scale-102 transition-all" size="xs">Sign up</Button>
                 </div>
             </div>
         </nav>

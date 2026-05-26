@@ -10,7 +10,7 @@ export const Hero = () => {
                 <h1 className="font-heading text-3xl font-bold text-center">Discover, Cook, and Share Your Next Favorite Meal. </h1>
                 <p className="text-center text-base">Join a community of food lovers. Discover thousands of recipes, save your favorites, and share your culinary creations with the world.</p>
 
-                <div className="flex justify-center gap-2 my-4">
+                <div className="flex justify-center gap-2 my-4 max-sm:flex-col max-sm:items-center">
                     <Button asChild size="sm" className="hover:scale-102 transition-all">
                         <Link href="/submit">
                             <FileHeartIcon className="size-4" />

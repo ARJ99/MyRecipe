@@ -24,6 +24,26 @@ const lunchRecipes = [
         ]
     },
     {
+        id: "0",
+        slug: "hot-honey-glazed-pork-chops",
+        title: "Hot Honey Glazed Pork Chops",
+        description: "These hot honey glazed pork chops are so simple, perfectly seasoned grilled pork chops with a little bit of sweet, a little bit of heat, and a whole lot of flavor.",
+        marinateTime: 20,
+        cookTime: 15,
+        totalTime: 35,
+        servings: 4,
+        ingredients: ["1 tablespoon olive oil", "1 tablespoon ground mustard", "1/2 teaspoon salt", "1/8 teaspoon black pepper", "1 - 1/4 pounds center cut pork chops", "1/4 cup hot honey"],
+        imageLink: "https://www.allrecipes.com/thmb/lSmwnd4cxlsILAYw_3eoUzeNmpc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/11835056_Hot-Honey-Glazed-Pork-Chops_Nicole-Russell_4x3-71b860737c4a478a8b9af7454812d2ed.jpg",
+        directions: [
+            "Preheat a grill to medium-high heat.",
+            "In a small bowl, whisk together the olive oil, ground mustard, salt, and black pepper.",
+            "Add the pork chops to the bowl and toss to coat.",
+            "Add the hot honey to the bowl and toss to coat.",
+            "Add the pork chops to the grill and cook for 4-5 minutes on each side, or until the pork chops are cooked through.",
+            "Serve the pork chops with the hot honey glaze.",
+        ]
+    },
+    {
         id: "2",
         slug: "garlicky-grilled-pesto-chicken",
         title: "Garlicky Grilled Pesto Chicken",
