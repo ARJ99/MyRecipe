@@ -32,6 +32,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html
         lang="en"
+        suppressHydrationWarning
       >
         <body className={`${fjallaOne.variable} ${raleway.variable} antialiased`}>
           <Header />

@@ -32,12 +32,19 @@ export const RecipeCard = ({ recipes }: { recipes: Recipe }) => {
                 <CardContent className="space-y-2">
                     <div className="flex justify-center">
                         <div className="relative w-full h-[150px]">
-                            <Image src={recipes.imageLink} alt="recipe" fill sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 448px" className="rounded-lg object-cover" />
+                            <Image
+                                src={recipes.imageLink}
+                                alt="recipe"
+                                fill
+                                sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 448px"
+                                className="rounded-lg object-cover"
+                                loading="eager"
+                            />
                         </div>
                     </div>
                     <CardDescription className="overflow-y-hidden h-[80px]">
                         {recipes.description}
-                        
+
                     </CardDescription>
                 </CardContent>
 

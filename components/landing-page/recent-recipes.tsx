@@ -17,7 +17,7 @@ export const RecentRecipes = async () => {
                 </div>
 
 
-                {!(allRecentRecipes.length > 0) ? (
+                {allRecentRecipes.length > 0 ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center">
                         {allRecentRecipes.map((recipe) => (
                             <RecipeCard key={recipe.id} recipes={recipe} />
