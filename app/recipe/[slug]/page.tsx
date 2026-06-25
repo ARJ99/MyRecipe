@@ -32,7 +32,7 @@ const AboutRecipe = async ({ params }: { params: Promise<{ slug: string }> }) =>
                 <div className="py-4 flex flex-col gap-4 justify-center">
                     <div className="flex flex-row gap-2 items-center">
                         <CookingPot />
-                        <h1 className="text-2xl">{title}</h1>
+                        <h1 className="text-3xl unde">{title}</h1>
                     </div>
 
                     <Image
@@ -46,9 +46,9 @@ const AboutRecipe = async ({ params }: { params: Promise<{ slug: string }> }) =>
                         className="rounded-lg"
                     />
 
-                    <div className="my-2 text-sm">
+                    <div className="mt-2 text-sm ">
                         <p>{description}</p>
-                        <div className="my-2 px-2 py-4 inline-flex gap-4 bg-accent rounded-2xl">
+                        <div className="mt-2 px-2 p-2 pr-4 inline-flex gap-4 bg-secondary/10 rounded-2xl">
                             <p>Marinate Time : {marinateTime} min</p>
                             <p>Cook Time : {cookTime} min</p>
                             <p>Total Time : {totalTime} min</p>
@@ -58,7 +58,7 @@ const AboutRecipe = async ({ params }: { params: Promise<{ slug: string }> }) =>
 
                     <div>
                         <h2 className="text-base font-bold py-2">Ingredients</h2>
-                        <ul>
+                        <ul className="bg-secondary/10 p-2 rounded-2xl inline-flex flex-col">
                             {ingredients && ingredients.map((ingredient, index) => (
                                 <li key={index} className="text-sm py-1">
                                     {ingredient}
@@ -79,6 +79,7 @@ const AboutRecipe = async ({ params }: { params: Promise<{ slug: string }> }) =>
                         </ol>
                     </div>
 
+                    <hr />
                 </div>
 
             </div>
