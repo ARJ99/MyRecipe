@@ -24,7 +24,7 @@ type Recipe = InferSelectModel<typeof recipes>;
 
 export const RecipeCard = ({ recipes }: { recipes: Recipe }) => {
     return (
-        <Link href="/">
+        <Link href={`/recipe/${recipes.slug}`}>
             <Card className="flex flex-col overflow-hidden hover:scale-102 transition-all h-[380px] max-w-md py-0 my-0 bg-card">
                 <CardHeader className="py-4 px-4 border-b ">
                     <CardTitle className="text-center">{recipes.title}</CardTitle>

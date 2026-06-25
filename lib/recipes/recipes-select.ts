@@ -20,3 +20,12 @@ export async function getRecentlyRecipes() {
             new Date(recipe.createdAt.toISOString()) >= oneWeekAgo
     );
 }
+
+export async function getRecipeBySlug(slug: string) {
+    await connection();
+
+    const recipe = await db.select().from(recipes).where(eq(recipes.slug, slug));
+
+    return recipe[0] ?? null;
+
+}
